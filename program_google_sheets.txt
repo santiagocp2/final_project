@@ -1,0 +1,12 @@
+var sheet_id = "1Dqe7zJH9-uM2nPahfOxBz7POzsD68see-npX2e2LOIc";
+var sheet_name = "Sheet1";
+function doGet(e){
+var ss = SpreadsheetApp.openById(sheet_id);
+var sheet = ss.getSheetByName(sheet_name);
+var lon = Number(e.parameter.lon);
+var lat = Number(e.parameter.lat);
+var name = String(e.parameter.name);
+var color = String(e.parameter.color);
+var description = String(e.parameter.description);
+sheet.appendRow([name,description,color,lat,lon]);
+}
